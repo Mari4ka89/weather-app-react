@@ -1,0 +1,15 @@
+.temperature {
+  line-height: 1;
+  font-size: 68px;
+}
+
+.scale {
+  position: relative;
+  top: -38px;
+  left: -5px;
+}
+
+.weather-now-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
