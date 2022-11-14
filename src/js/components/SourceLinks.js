@@ -1,7 +1,9 @@
 import React from "react";
 
+import "../../css/SourceLinks.css";
+
 const SourceLinks = () => (
-  <div className="text-center">
+  <footer className="SourceLinks text-center">
     <a
       href="https://github.com/Mari4ka89/weather-app"
       rel="noreferrer"
@@ -17,7 +19,7 @@ const SourceLinks = () => (
     >
       hosted on Netlify
     </a>
-  </div>
+  </footer>
 );
 
 export default SourceLinks;

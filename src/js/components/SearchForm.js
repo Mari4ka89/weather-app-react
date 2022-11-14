@@ -8,7 +8,7 @@ const SearchForm = () => (
   <Form>
     <Row className="align-items-center">
       <Col xs={8}>
-        <Form.Control placeholder="Location" />
+        <Form.Control placeholder="Location" autoFocus />
       </Col>
       <Col xs={2}>
         <Button type="submit" variant="primary">
@@ -16,7 +16,7 @@ const SearchForm = () => (
         </Button>
       </Col>
       <Col xs={2}>
-        <Button variant="secondary">Current</Button>
+        <Button variant="secondary">Here</Button>
       </Col>
     </Row>
   </Form>

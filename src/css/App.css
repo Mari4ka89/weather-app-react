@@ -1,6 +1,4 @@
-.content {
+.App {
   margin: 80px auto 10px;
   max-width: 600px;
-  border: 1px solid var(--bs-border-color-translucent);
-  padding: 20px;
 }
