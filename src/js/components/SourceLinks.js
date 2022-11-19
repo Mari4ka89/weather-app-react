@@ -13,7 +13,7 @@ const SourceLinks = () => (
     </a>{" "}
     by Mariia Bezrukava which is{" "}
     <a
-      href="https://lucent-strudel-ec4419.netlify.app/"
+      href="https://scintillating-kulfi-f23689.netlify.app/"
       rel="noreferrer"
       target="_blank"
     >
