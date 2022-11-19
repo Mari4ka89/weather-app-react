@@ -3,9 +3,11 @@ import Row from "react-bootstrap/Row";
 import DailyForecast from "./DailyForecast";
 
 const Forecast = () => (
-  <Row>
-    <DailyForecast />
-  </Row>
+  <div className="text-align-center">
+    <Row>
+      <DailyForecast />
+    </Row>
+  </div>
 );
 
 export default Forecast;

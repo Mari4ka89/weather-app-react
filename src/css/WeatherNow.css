@@ -1,12 +1,11 @@
 .WeatherNow .temperature {
   line-height: 1;
-  font-size: 68px;
+  font-size: 60px;
 }
 
 .WeatherNow .scale {
   position: relative;
-  top: -38px;
-  left: -5px;
+  top: -32px;
 }
 
 .WeatherNow .icon {

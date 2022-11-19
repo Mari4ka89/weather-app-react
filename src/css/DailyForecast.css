@@ -1,4 +1,3 @@
-.DailyForecast .icon {
-  margin: 0 auto;
-  width: 60px;
+.DailyForecast {
+  margin: 10px auto;
 }

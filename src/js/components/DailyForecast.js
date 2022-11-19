@@ -5,9 +5,9 @@ import "../../css/DailyForecast.css";
 
 const DailyForecast = ({ dt, min, max, name, clear }) => (
   <Col xs={2} className="DailyForecast">
-    <div className="text-center text-uppercase">Mon</div>
-    <WeatherIcon name="04d" alt="clear" className="icon d-block" />
-    <div className="text-center">
+    <div className="text-uppercase">Mon</div>
+    <WeatherIcon code="04d" size={36} />
+    <div>
       <span className="fw-bold">{Math.round(max || 30)}°</span>
       <span>{Math.round(min || 10)}°</span>
     </div>

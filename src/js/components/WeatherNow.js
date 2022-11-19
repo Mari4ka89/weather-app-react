@@ -6,23 +6,27 @@ import WeatherIcon from "./WeatherIcon";
 
 import "../../css/WeatherNow.css";
 
-const WeatherNow = () => (
+const WeatherNow = ({
+  data: { city, date, temperature, icon, wind, humidity, description },
+}) => (
   <Row className="WeatherNow pt-3">
-    <Col xs={5} className="d-flex">
-      <WeatherIcon name="04d" alt="clear" className="icon" />
-      <div>
-        <span className="temperature">11</span>
-        <span className="scale">°C</span>
+    <Col xs={5}>
+      <div className="d-flex align-items-center">
+        <WeatherIcon code={icon} size={52} />
+        <div>
+          <span className="temperature">{Math.round(temperature)}</span>
+          <span className="scale">°C</span>
+        </div>
       </div>
     </Col>
     <Col xs={3} className="text-muted">
-      <div>Humidity: 52%</div>
-      <div>Wind: 2km/h</div>
+      <div>Humidity: {humidity}%</div>
+      <div>Wind: {Math.round(wind)}km/h</div>
     </Col>
     <Col xs={4}>
-      <h1>Dnipro</h1>
-      <div className="text-muted">{formatDate(new Date())}</div>
-      <div className="text-muted">Cloudy</div>
+      <h1>{city}</h1>
+      <div className="text-muted">{formatDate(date)}</div>
+      <div className="text-muted text-capitalize">{description}</div>
     </Col>
   </Row>
 );

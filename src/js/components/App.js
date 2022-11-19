@@ -8,7 +8,7 @@ import "../../css/App.css";
 const App = () => (
   <div className="App">
     <Container>
-      <Weather />
+      <Weather defaultCity="Dnipro" />
       <SourceLinks />
     </Container>
   </div>
