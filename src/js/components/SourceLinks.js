@@ -5,7 +5,7 @@ import "../../css/SourceLinks.css";
 const SourceLinks = () => (
   <footer className="SourceLinks text-center">
     <a
-      href="https://github.com/Mari4ka89/weather-app"
+      href="https://github.com/Mari4ka89/weather-app-react"
       rel="noreferrer"
       target="_blank"
     >
