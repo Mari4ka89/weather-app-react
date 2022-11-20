@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import SearchForm from "./SearchForm";
 import WeatherNow from "./WeatherNow";
+import Forecast from "./Forecast";
 
 import "../../css/Weather.css";
 
@@ -47,6 +48,7 @@ const Weather = ({ defaultCity }) => {
       <div className="Weather">
         <SearchForm handleSearch={search} location={defaultCity} />
         <WeatherNow data={weatherData} />
+        <Forecast />
       </div>
     );
   } else {

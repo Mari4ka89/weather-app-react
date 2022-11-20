@@ -4,12 +4,16 @@ import WeatherIcon from "./WeatherIcon";
 import "../../css/DailyForecast.css";
 
 const DailyForecast = ({ dt, min, max, name, clear }) => (
-  <Col xs={2} className="DailyForecast">
+  <Col>
     <div className="text-uppercase">Mon</div>
     <WeatherIcon code="04d" size={36} />
     <div>
-      <span className="fw-bold">{Math.round(max || 30)}°</span>
-      <span>{Math.round(min || 10)}°</span>
+      <span className="DailyForecast-temperature-max">
+        {Math.round(max || 30)}°
+      </span>
+      <span className="DailyForecast-temperature-min">
+        {Math.round(min || 10)}°
+      </span>
     </div>
   </Col>
 );

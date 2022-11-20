@@ -11,7 +11,7 @@ const WeatherNow = ({
   data: { city, date, temperature, icon, wind, humidity, description },
 }) => {
   return (
-    <Row className="WeatherNow pt-3">
+    <Row className="WeatherNow py-3">
       <Col xs={5}>
         <div className="d-flex align-items-center">
           <WeatherIcon code={icon} size={52} />
