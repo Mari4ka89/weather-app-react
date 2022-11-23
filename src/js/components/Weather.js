@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import apiKey from "../constants/apiKey";
+import apiUrl from "../constants/apiUrl";
 import SearchForm from "./SearchForm";
 import WeatherNow from "./WeatherNow";
 import Forecast from "./Forecast";
@@ -35,10 +37,10 @@ const Weather = ({ defaultCity }) => {
   };
 
   const search = (location) => {
-    const apiKey = "b5e52b0183dd015aa8333edb5e3eada1";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
+    let url = `${apiUrl}weather?q=${location}&appid=${apiKey}&units=metric`;
+
     axios
-      .get(apiUrl)
+      .get(url)
       .then(handleResponse)
       .catch(() => console.log("There is no such destination."));
   };
@@ -48,7 +50,7 @@ const Weather = ({ defaultCity }) => {
       <div className="Weather">
         <SearchForm handleSearch={search} location={defaultCity} />
         <WeatherNow data={weatherData} />
-        <Forecast />
+        <Forecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
