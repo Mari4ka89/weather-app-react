@@ -7,9 +7,7 @@ import Row from "react-bootstrap/Row";
 const SearchForm = ({ handleSearch, location }) => {
   const [city, setCity] = useState(location);
 
-  const handleLocationChange = (event) => {
-    setCity(event.target.value);
-  };
+  const handleLocationChange = (event) => setCity(event.target.value);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,20 +17,17 @@ const SearchForm = ({ handleSearch, location }) => {
   return (
     <Form onSubmit={handleSubmit}>
       <Row className="align-items-center">
-        <Col xs={8}>
+        <Col xs={9}>
           <Form.Control
             placeholder="Location"
             autoFocus
             onChange={handleLocationChange}
           />
         </Col>
-        <Col xs={2}>
-          <Button type="submit" variant="primary">
+        <Col xs={3}>
+          <Button type="submit" variant="primary" className="w-100">
             Search
           </Button>
-        </Col>
-        <Col xs={2}>
-          <Button variant="secondary">Here</Button>
         </Col>
       </Row>
     </Form>
