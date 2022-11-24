@@ -20,8 +20,8 @@ const DailyForecast = ({
   };
 
   return (
-    <Col>
-      <div className="text-uppercase">{calculateDay()}</div>
+    <Col className="text-center">
+      <div className="pb-2">{calculateDay()}</div>
       <WeatherIcon code={weather[0].icon} size={36} />
       <div>
         <span className="DailyForecast-temperature-max">
