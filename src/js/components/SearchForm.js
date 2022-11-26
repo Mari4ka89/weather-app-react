@@ -14,7 +14,7 @@ const SearchForm = ({ handleSearch, location, unit }) => {
     handleSearch(city);
   };
 
-  useEffect(() => handleSearch(city), [unit]);
+  useEffect(() => handleSearch(city), [unit]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Form onSubmit={handleSubmit}>
