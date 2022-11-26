@@ -14,7 +14,7 @@ const WeatherNow = ({
 }) => {
   return (
     <Row className="WeatherNow py-4">
-      <Col xs={5}>
+      <Col xs={6} md={5}>
         <div className="d-flex align-items-center">
           <WeatherIcon code={icon} size={52} />
           <WeatherTemperature
@@ -24,11 +24,11 @@ const WeatherNow = ({
           />
         </div>
       </Col>
-      <Col xs={3} className="text-muted">
+      <Col xs={6} md={3} className="text-muted">
         <div>Humidity: {humidity}%</div>
         <div>Wind: {Math.round(wind)}km/h</div>
       </Col>
-      <Col xs={4}>
+      <Col xs={12} md={4}>
         <h1>{city}</h1>
         <div className="text-muted">{formatDate(date)}</div>
         <div className="text-muted text-capitalize">{description}</div>
