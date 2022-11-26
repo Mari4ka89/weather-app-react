@@ -20,7 +20,7 @@ const DailyForecast = ({
   };
 
   return (
-    <Col className="text-center">
+    <Col xs={4} md={2} className="text-center mt-2">
       <div className="pb-2">{calculateDay()}</div>
       <WeatherIcon code={weather[0].icon} size={36} />
       <div>

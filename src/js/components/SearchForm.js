@@ -19,14 +19,14 @@ const SearchForm = ({ handleSearch, location, unit }) => {
   return (
     <Form onSubmit={handleSubmit}>
       <Row className="align-items-center">
-        <Col xs={9}>
+        <Col xs={8} md={9}>
           <Form.Control
             placeholder="Location"
             autoFocus
             onChange={handleLocationChange}
           />
         </Col>
-        <Col xs={3}>
+        <Col xs={4} md={3}>
           <Button type="submit" variant="primary" className="w-100">
             Search
           </Button>
