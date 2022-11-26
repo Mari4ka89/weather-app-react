@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import axios from "axios";
-import apiKey from "../constants/apiKey";
-import apiUrl from "../constants/apiUrl";
+import { apiKey, apiUrl } from "../constants/api";
+import { metric } from "../constants/units";
 import SearchForm from "./SearchForm";
 import WeatherNow from "./WeatherNow";
 import Forecast from "./Forecast";
+import BusyIndicator from "./BusyIndicator";
 
 import "../../css/Weather.css";
 
 const Weather = ({ defaultCity }) => {
   const [weatherData, setWeatherData] = useState({});
+  const [unit, setUnit] = useState(metric);
+
+  const handleSetUnit = (value) => {
+    setUnit(value);
+  };
 
   const handleResponse = ({
     data: {
@@ -37,7 +43,7 @@ const Weather = ({ defaultCity }) => {
   };
 
   const search = (location) => {
-    let url = `${apiUrl}weather?q=${location}&appid=${apiKey}&units=metric`;
+    let url = `${apiUrl}weather?q=${location}&appid=${apiKey}&units=${unit}`;
 
     axios
       .get(url)
@@ -48,14 +54,23 @@ const Weather = ({ defaultCity }) => {
   if (weatherData.loaded) {
     return (
       <div className="Weather">
-        <SearchForm handleSearch={search} location={defaultCity} />
-        <WeatherNow data={weatherData} />
-        <Forecast coordinates={weatherData.coordinates} />
+        <SearchForm handleSearch={search} unit={unit} location={defaultCity} />
+        <WeatherNow
+          data={weatherData}
+          unit={unit}
+          handleSetUnit={handleSetUnit}
+        />
+        <Forecast coordinates={weatherData.coordinates} unit={unit} />
       </div>
     );
   } else {
     search(defaultCity);
-    return "Loading...";
+
+    return (
+      <div className="w-100 text-center">
+        <BusyIndicator />
+      </div>
+    );
   }
 };
 

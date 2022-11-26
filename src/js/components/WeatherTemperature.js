@@ -1,27 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
+import { metric, imperial } from "../constants/units";
 import "../../css/WeatherTemperature.css";
 
-const WeatherTemperature = ({ celsius }) => {
-  const [unit, setUnit] = useState("celsius");
-
+const WeatherTemperature = ({ temperature, unit, handleSetUnit }) => {
   const showCelsius = (event) => {
     event.preventDefault();
-    setUnit("celsius");
+    handleSetUnit(metric);
   };
 
   const showFahrenheit = (event) => {
     event.preventDefault();
-    setUnit(fahrenheit);
+    handleSetUnit(imperial);
   };
 
-  const fahrenheit = () => (celsius * 9) / 5 + 32;
-  const isCelsius = unit === "celsius";
+  const isCelsius = unit === metric;
 
   return (
     <div className="WeatherTemperature">
-      <span className="temperature">
-        {Math.round(isCelsius ? celsius : fahrenheit())}
-      </span>
+      <span className="temperature">{Math.round(temperature)}</span>
       {isCelsius ? (
         <div className="unit">
           °C |{" "}

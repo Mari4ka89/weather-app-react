@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import axios from "axios";
-import apiKey from "../constants/apiKey";
-import apiUrl from "../constants/apiUrl";
+import { apiKey, apiUrl } from "../constants/api";
 import DailyForecast from "./DailyForecast";
 
-const Forecast = ({ coordinates }) => {
+const Forecast = ({ coordinates, unit }) => {
   const [forecast, setForecast] = useState(null);
   const [loaded, setLoaded] = useState(false);
 
@@ -18,7 +17,7 @@ const Forecast = ({ coordinates }) => {
 
   const loadForecast = () => {
     const { lat, lon } = coordinates;
-    const url = `${apiUrl}onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    const url = `${apiUrl}onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`;
 
     axios.get(url).then(handleResponse);
   };

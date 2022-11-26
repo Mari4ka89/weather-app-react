@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 
-const SearchForm = ({ handleSearch, location }) => {
+const SearchForm = ({ handleSearch, location, unit }) => {
   const [city, setCity] = useState(location);
 
   const handleLocationChange = (event) => setCity(event.target.value);
@@ -13,6 +13,8 @@ const SearchForm = ({ handleSearch, location }) => {
     event.preventDefault();
     handleSearch(city);
   };
+
+  useEffect(() => handleSearch(city), [unit]);
 
   return (
     <Form onSubmit={handleSubmit}>

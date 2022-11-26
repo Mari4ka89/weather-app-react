@@ -9,13 +9,19 @@ import "../../css/WeatherNow.css";
 
 const WeatherNow = ({
   data: { city, date, temperature, icon, wind, humidity, description },
+  unit,
+  handleSetUnit,
 }) => {
   return (
     <Row className="WeatherNow py-4">
       <Col xs={5}>
         <div className="d-flex align-items-center">
           <WeatherIcon code={icon} size={52} />
-          <WeatherTemperature celsius={temperature} />
+          <WeatherTemperature
+            temperature={temperature}
+            unit={unit}
+            handleSetUnit={handleSetUnit}
+          />
         </div>
       </Col>
       <Col xs={3} className="text-muted">
