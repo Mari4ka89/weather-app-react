@@ -17,8 +17,12 @@
   height: var(--icon-size);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .WeatherNow {
-    padding: 10px 0 0;
+    padding: 10px 0;
+  }
+
+  .WeatherNow .temperature {
+    font-size: 50px;
   }
 }
