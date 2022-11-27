@@ -3,7 +3,7 @@
   max-width: 600px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .App {
     margin: 10px auto;
   }

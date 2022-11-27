@@ -1,3 +1,7 @@
+.WeatherNow {
+  padding: 20px 0;
+}
+
 .WeatherNow .temperature {
   line-height: 1;
   font-size: 60px;
@@ -11,4 +15,10 @@
 .WeatherNow .icon {
   width: var(--icon-size);
   height: var(--icon-size);
+}
+
+@media (max-width: 768px) {
+  .WeatherNow {
+    padding: 10px 0 0;
+  }
 }

@@ -13,8 +13,8 @@ const WeatherNow = ({
   handleSetUnit,
 }) => {
   return (
-    <Row className="WeatherNow py-4">
-      <Col xs={6} md={5}>
+    <Row className="WeatherNow">
+      <Col xs={7} md={5}>
         <div className="d-flex align-items-center">
           <WeatherIcon code={icon} size={52} />
           <WeatherTemperature
@@ -24,7 +24,7 @@ const WeatherNow = ({
           />
         </div>
       </Col>
-      <Col xs={6} md={3} className="text-muted">
+      <Col xs={5} md={3} className="text-muted">
         <div>Humidity: {humidity}%</div>
         <div>Wind: {Math.round(wind)}km/h</div>
       </Col>
